@@ -62,7 +62,7 @@ def generate_fake_logs(num_rows: int, output_path: str, log_date: date) -> None:
 
 if __name__ == "__main__":
    # Configuration: how many days and rows per day
-    days_back = 7         # generate logs for today and 6 previous days
+    days_back = 10         # generate logs for today and 6 previous days
     rows_per_day = 2000   
 
     today = date.today()
@@ -70,7 +70,7 @@ if __name__ == "__main__":
     for offset in range(days_back):
         log_date = today - timedelta(days=offset)
         date_str = log_date.strftime("%Y%m%d")  # e.g. 20260126
-        output_path = f"data/logs_{date_str}.csv"
+        output_path = f"date/logs_{date_str}.csv"
 
         generate_fake_logs(
             num_rows=rows_per_day,
