@@ -6,7 +6,7 @@ from pathlib import Path
 
 def generate_fake_logs(num_rows: int, output_path: str) -> None:
     """
-    Generate a CSV file with fake web log data.
+    Generate a CSV file with synthetic web log data.
 
     Columns:
     - event_time (timestamp)

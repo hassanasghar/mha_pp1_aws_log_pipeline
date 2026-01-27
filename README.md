@@ -17,6 +17,14 @@ The goal of the project is to demonstrate:
 
 ![Architecture Diagram](infra/mha_pp1.png)
 
+- Data generation script:
+  - [`src/generate_logs.py`](src/generate_logs.py)
+- Glue ETL job script (CSV → Parquet):
+  - [`infra/mha_pp1_csv_to_parquet.py`](infra/mha_pp1_csv_to_parquet.py)
+- Glue Catalog and crawler setup (CLI commands):
+  - [`infra/glue_catalog_setup.md`](infra/glue_catalog_setup.md)
+
+
 
 ## Data Flow
 
