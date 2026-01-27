@@ -24,6 +24,20 @@ The goal of the project is to demonstrate:
 - Glue Catalog and crawler setup (CLI commands):
   - [`infra/glue_catalog_setup.md`](infra/glue_catalog_setup.md)
 
+## 📊 Example Output: Daily System Health Metrics
+
+The pipeline produces a curated **Gold analytics layer** derived from raw web logs.
+Below is an example output generated from the `logs_daily_endpoint_metrics` table in Athena.
+
+![Daily error rate metrics](figures/daily_error_rate_metric_mha_pp1.png)
+
+**What this shows**
+- Daily request volume aggregated from raw logs
+- Daily error counts and error rate
+- Metrics computed from a partitioned Parquet clean layer (`event_date`-partitioned)
+
+This table is produced by an end-to-end pipeline:
+Raw CSV logs → Typed & partitioned Parquet → Daily aggregated metrics.
 
 
 ## Data Flow
@@ -56,6 +70,7 @@ SELECT COUNT(*) FROM mha_pp1_db.clean_logs;
 Observed Athena scan sizes:
 - CSV (raw table): ~52 KB scanned
 - Parquet (clean table): ~4 KB scanned
+
 
 ## How to Reproduce
 
