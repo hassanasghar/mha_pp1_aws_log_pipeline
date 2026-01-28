@@ -93,7 +93,7 @@ This approach reflects common production batch pipelines where data arrives incr
 - **Glue job bookmarks** for incremental loads
 
 
-This layer is the authoritative clean dataset used by downstream consumers.
+This layer provides clean dataset used by downstream tools.
 
 ---
 
@@ -106,7 +106,7 @@ This layer is the authoritative clean dataset used by downstream consumers.
 
 **Implementation:**
 
-- AWS Glue Studio **Visual Job** (no custom Spark code)
+- AWS Glue Studio **Visual Job**
 - Source: `logs_clean_v2` (Silver)
 
 ### Transform Logic
@@ -163,7 +163,7 @@ Both Silver and Gold jobs use **Glue job bookmarks**, ensuring:
 - Existing data is never re-scanned
 - Jobs remain fast and cost-efficient as data grows
 
-This mimics production batch pipelines where daily data arrives continuously.
+This mimics production batch pipelines where data arrives continuously.
 
 ---
 
